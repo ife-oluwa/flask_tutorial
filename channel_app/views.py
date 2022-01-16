@@ -1,11 +1,10 @@
 from flask import Flask, render_template
 from .channel_dictionary import channel_dictionary
-#import models
 
 app = Flask(__name__)
 
-# # Connect sqlalchemy to app
-# models.db.init_app(app)
+# Config options - Make sure you created a 'config.py' file.
+app.config.from_object('config')
 
 @app.route("/")
 def home():
