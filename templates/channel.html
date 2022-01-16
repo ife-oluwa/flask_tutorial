@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+
+{% block title %} 
+Zoom sur une chaine
+{% endblock  %} 
+
+{% block content %} 
+<h1> {{channel.title}}</h1>
+
+<a href={{channel.url}}> Visiter la chaine</a>
+
+<p> 
+<img src={{channel.image_url}} alt="Image de la chaine" width=400 />
+</p>
+
+<p> {{channel.description}} </p>
+<p> Langue: {{channel.language}} </p>
+<p> Les sujets abordés: {{channel.subjects}} </p>
+{% endblock  %} 

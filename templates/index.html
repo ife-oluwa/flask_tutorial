@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+
+{% block title %} 
+Mes chaines youtubes favorites 
+{% endblock  %} 
+
+{% block content %} 
+<h1> La tier liste de mes chaines youtube:</h1>
+
+<div class="row">
+    
+    {% for channel in channel_dictionary%}
+    <div class="col-md-3">
+        <div class="card text-center">
+            <img src={{channel_dictionary[channel]["image_url"]}} class="card-img-top" alt="image de la chaine">
+            <div class="card-body">
+                <h5 class="card-title">{{channel_dictionary[channel]["title"]}}</h5>
+                <p class="card-text">{{channel_dictionary[channel]["description"]}}</p>
+                <a href={{channel_dictionary[channel]["title"]}} class="btn btn-primary">{{channel_dictionary[channel]["title"]}} </a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+
+{% endblock  %} 
+
