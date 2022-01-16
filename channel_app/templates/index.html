@@ -9,14 +9,14 @@ Mes chaines youtubes favorites
 
 <div class="row">
     
-    {% for channel in channel_dictionary%}
+    {% for channel in channel_list%}
     <div class="col-md-3">
         <div class="card text-center">
-            <img src={{channel_dictionary[channel]["image_url"]}} class="card-img-top" alt="image de la chaine">
+            <img src={{channel.image_url}} class="card-img-top" alt="image de la chaine">
             <div class="card-body">
-                <h5 class="card-title">{{channel_dictionary[channel]["title"]}}</h5>
-                <p class="card-text">{{channel_dictionary[channel]["description"]}}</p>
-                <a href={{channel_dictionary[channel]["title"]}} class="btn btn-primary">{{channel_dictionary[channel]["title"]}} </a>
+                <h5 class="card-title">{{channel.title}}</h5>
+                <p class="card-text">{{channel.description}}</p>
+                <a href={{channel.title}} class="btn btn-primary">{{channel.title}} </a>
             </div>
         </div>
     </div>
