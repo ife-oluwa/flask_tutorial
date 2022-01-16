@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from channel_dictionary import channel_dictionary
+from .channel_dictionary import channel_dictionary
 #import models
 
 app = Flask(__name__)
@@ -15,17 +15,3 @@ def home():
 def channel(channel):
     return render_template("channel.html", channel=channel_dictionary[channel])
     
-
-
-
-if __name__ == "__main__":
-    
-    app.run(debug=True)
-
-
-
-
-
-
-# Connect sqlalchemy to app
-models.db.init_app(app)
