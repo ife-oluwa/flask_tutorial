@@ -1,9 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 import logging as lg
-from .views import app
+from flask_login import UserMixin
+from channel_app import db
 
-# Create database connection object
-db = SQLAlchemy(app)
 
 class Channel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,13 +14,13 @@ class Channel(db.Model):
     image_url = db.Column(db.String(200), nullable=True)
 
 
-    def __init__(self, title, url,description=None, language=None, subjects=None, image_url=None):
-        self.title = title
-        self.url = url
-        self.description = description
-        self.language = language
-        self.subjects = subjects
-        self.image_url = image_url
+
+class User(UserMixin,db.Model):
+    id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(1000))
+
 
 
 def init_db():
