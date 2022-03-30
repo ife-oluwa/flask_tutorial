@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ca3d0154-92e2-4ddc-8b54-a2e1b8f5281b/resourceGroups/cbeniac_rg_5340/providers/Microsoft.Web/sites/CICDTUTO",
+    "appService.deploySubpath": "."
+}
