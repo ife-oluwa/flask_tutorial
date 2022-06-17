@@ -1,4 +1,4 @@
-import channel_app.views
+
 
 def test_login():
     assert True
